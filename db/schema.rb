@@ -12,21 +12,4 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "entries", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.date "date"
-    t.integer "journal_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["journal_id"], name: "index_entries_on_journal_id"
-  end
-
-  create_table "journals", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "entries", "journals"
 end

@@ -4,6 +4,7 @@ class CreateEntries < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :description
       t.date :date
+      t.belongs_to :journal, null: false, foreign_key: true
 
       t.timestamps
     end
